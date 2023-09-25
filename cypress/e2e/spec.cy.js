@@ -21,6 +21,10 @@ describe('url shortener on page load', () => {
     .contains('http://localhost')
   })
 
+  it('should allow user to type into inputs', () => {
+    cy.get('[placeholder="Title..."]').type('test2').should('have.value', 'test2')
+  })
+
   it('should allow user to fill out form', () => {
     cy.get('[placeholder="Title..."]').type('testTitle')
     cy.get('[placeholder="URL to Shorten..."]').type('testDescription')
