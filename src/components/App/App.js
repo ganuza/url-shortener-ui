@@ -9,7 +9,7 @@ function App () {
 
   useEffect(() => {
     getUrls()
-    .then(data => setUrls(data))
+    .then(data => setUrls(data.urls))
     .catch(error => console.log(error))
   },[])
 
@@ -20,7 +20,7 @@ function App () {
         <UrlForm />
       </header>
 
-      {/* <UrlContainer urls={urls}/> */}
+      <UrlContainer urls={urls}/>
     </main>
   );
 }
